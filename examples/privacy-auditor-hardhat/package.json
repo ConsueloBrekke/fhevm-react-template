@@ -1,0 +1,24 @@
+{
+  "name": "privacy-auditor-hardhat",
+  "version": "1.0.0",
+  "description": "Privacy Compliance Auditor - Hardhat Smart Contract Example",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "node": "hardhat node",
+    "deploy": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:localhost": "hardhat run scripts/deploy.js --network localhost"
+  },
+  "keywords": ["fhevm", "privacy", "compliance", "hardhat"],
+  "author": "FHEVM SDK Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.0"
+  },
+  "dependencies": {
+    "@fhevm/solidity": "^0.8.0",
+    "@zama-fhe/oracle-solidity": "^0.2.0",
+    "dotenv": "^16.3.1"
+  }
+}
