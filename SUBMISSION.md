@@ -4,7 +4,7 @@
 
 **Submission Date**: January 2025
 **Team**: FHEVM SDK Team
-**Repository**: https://github.com/zama-ai/fhevm-react-template
+**Repository**: https://github.com/ConsueloBrekke/fhevm-react-template
 
 ---
 
@@ -405,13 +405,17 @@ Unlike most FHE libraries:
 
 ### Live Demos
 
-- **Next.js Example**: https://nextjs-compliance-auditor.vercel.app/
+- **Next.js Example**: https://fhe-compliance-auditor.vercel.app/
 - **Smart Contract**: https://sepolia.etherscan.io/address/0xf7f80e8BE9823E5D8df70960cECd7f7A24266098
 
 ### Repository
 
-- **GitHub**: https://github.com/zama-ai/fhevm-react-template
+- **GitHub**: https://github.com/ConsueloBrekke/fhevm-react-template
 - **NPM Package**: https://www.npmjs.com/package/@fhevm-sdk/core
+
+### Demo Video
+
+- **Video File**: `demo.mp4` - Download the video file to watch the full demonstration
 
 ---
 
@@ -499,9 +503,9 @@ This submission delivers a **production-ready, universal FHEVM SDK** that:
 ## 📞 Contact
 
 For questions or clarifications:
-- **GitHub Issues**: https://github.com/zama-ai/fhevm-react-template/issues
+- **GitHub Issues**: https://github.com/ConsueloBrekke/fhevm-react-template/issues
 - **Documentation**: See `docs/` folder
-- **Video**: Watch `demo.mp4`
+- **Demo Video**: Download `demo.mp4` to watch the demonstration
 
 ---
 
