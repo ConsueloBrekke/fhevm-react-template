@@ -377,7 +377,7 @@ main();
 
 ## 🎥 Video Demo
 
-**[Watch the Demo](./demo.mp4)** - Complete walkthrough showing:
+**[Watch the Demo demo.mp4]** - Complete walkthrough showing:
 
 1. SDK installation and setup
 2. Framework integration (Next.js)
