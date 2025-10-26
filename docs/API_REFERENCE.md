@@ -722,6 +722,6 @@ const handleCall = async () => {
 
 ## Support
 
-- **GitHub**: [https://github.com/ConsueloBrekke/fhevm-react-template](https://github.com/ConsueloBrekke/fhevm-react-template)
-- **Issues**: [GitHub Issues](https://github.com/ConsueloBrekke/fhevm-react-template/issues)
+- **GitHub**: [https://github.com/your-username/fhevm-react-template](https://github.com/your-username/fhevm-react-template)
+- **Issues**: [GitHub Issues](https://github.com/your-username/fhevm-react-template/issues)
 - **Zama Docs**: [https://docs.zama.ai/](https://docs.zama.ai/)

@@ -4,7 +4,7 @@
 
 **Submission Date**: January 2025
 **Team**: FHEVM SDK Team
-**Repository**: https://github.com/ConsueloBrekke/fhevm-react-template
+**Repository**: https://github.com/your-username/fhevm-react-template
 
 ---
 
@@ -410,7 +410,7 @@ Unlike most FHE libraries:
 
 ### Repository
 
-- **GitHub**: https://github.com/ConsueloBrekke/fhevm-react-template
+- **GitHub**: https://github.com/your-username/fhevm-react-template
 - **NPM Package**: https://www.npmjs.com/package/@fhevm-sdk/core
 
 ### Demo Video
@@ -503,7 +503,7 @@ This submission delivers a **production-ready, universal FHEVM SDK** that:
 ## 📞 Contact
 
 For questions or clarifications:
-- **GitHub Issues**: https://github.com/ConsueloBrekke/fhevm-react-template/issues
+- **GitHub Issues**: https://github.com/your-username/fhevm-react-template/issues
 - **Documentation**: See `docs/` folder
 - **Demo Video**: Download `demo.mp4` to watch the demonstration
 

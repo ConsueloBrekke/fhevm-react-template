@@ -5,13 +5,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm](https://img.shields.io/badge/npm-@fhevm--sdk%2Fcore-blue)](https://www.npmjs.com/package/@fhevm-sdk/core)
 [![Zama FHE](https://img.shields.io/badge/Powered%20by-Zama%20FHE-blueviolet)](https://docs.zama.ai/)
-[![Framework Agnostic](https://img.shields.io/badge/Framework-Agnostic-green)](https://github.com/ConsueloBrekke/fhevm-react-template)
+[![Framework Agnostic](https://img.shields.io/badge/Framework-Agnostic-green)](https://github.com/your-username/fhevm-react-template)
 
 A **wagmi-like structure** SDK that makes building confidential frontends simple, consistent, and developer-friendly. Works with **React**, **Next.js**, **Vue**, **Node.js**, or any JavaScript environment.
 
 ## 🌐 Links
 
-**📂 GitHub Repository**: [https://github.com/ConsueloBrekke/fhevm-react-template](https://github.com/ConsueloBrekke/fhevm-react-template)
+**📂 GitHub Repository**: [https://github.com/your-username/fhevm-react-template](https://github.com/your-username/fhevm-react-template)
 
 **🚀 Live Demo**: [https://fhe-compliance-auditor.vercel.app/](https://fhe-compliance-auditor.vercel.app/)
 
@@ -94,8 +94,64 @@ fhevm-react-template/
 ├── examples/
 │   ├── nextjs-compliance-auditor/    # 📱 Next.js Example (Required)
 │   │   ├── app/                      # Next.js 14+ App Router
+│   │   │   ├── api/                  # API routes
+│   │   │   │   ├── fhe/              # FHE operation routes
+│   │   │   │   │   ├── route.ts      # Main FHE route
+│   │   │   │   │   ├── encrypt/      # Encryption endpoint
+│   │   │   │   │   ├── decrypt/      # Decryption endpoint
+│   │   │   │   │   └── compute/      # Computation endpoint
+│   │   │   │   └── keys/             # Key management route
+│   │   │   ├── layout.tsx            # Root layout
+│   │   │   ├── page.tsx              # Homepage
+│   │   │   └── globals.css           # Global styles
 │   │   ├── components/
+│   │   │   ├── ui/                   # Base UI components
+│   │   │   │   ├── Button.tsx
+│   │   │   │   ├── Input.tsx
+│   │   │   │   └── Card.tsx
+│   │   │   ├── fhe/                  # FHE feature components
+│   │   │   │   ├── FHEProvider.tsx   # FHE context provider
+│   │   │   │   ├── EncryptionDemo.tsx
+│   │   │   │   ├── ComputationDemo.tsx
+│   │   │   │   └── KeyManager.tsx
+│   │   │   ├── examples/             # Use case examples
+│   │   │   │   ├── BankingExample.tsx
+│   │   │   │   └── MedicalExample.tsx
+│   │   │   └── ComplianceForm.tsx    # Main form component
 │   │   ├── lib/                      # SDK integration
+│   │   │   ├── fhe/                  # FHE integration library
+│   │   │   │   ├── client.ts         # Client-side operations
+│   │   │   │   ├── server.ts         # Server-side operations
+│   │   │   │   ├── keys.ts           # Key management
+│   │   │   │   └── types.ts          # Type definitions
+│   │   │   └── utils/                # Utility functions
+│   │   │       ├── security.ts       # Security utilities
+│   │   │       └── validation.ts     # Validation utilities
+│   │   ├── hooks/                    # Custom React hooks
+│   │   │   ├── useFHE.ts             # FHE initialization hook
+│   │   │   ├── useEncryption.ts      # Encryption hook
+│   │   │   └── useComputation.ts     # Computation hook
+│   │   ├── types/                    # TypeScript types
+│   │   │   ├── fhe.ts                # FHE-related types
+│   │   │   └── api.ts                # API type definitions
+│   │   └── package.json
+│   │
+│   ├── PrivacyComplianceAuditor/     # 📱 React + Vite Example
+│   │   ├── src/
+│   │   │   ├── components/           # React components
+│   │   │   │   ├── Header.tsx
+│   │   │   │   ├── FeaturesGrid.tsx
+│   │   │   │   ├── ComplianceStandards.tsx
+│   │   │   │   └── ComplianceForm.tsx
+│   │   │   ├── hooks/                # Custom hooks
+│   │   │   │   ├── useFHE.ts
+│   │   │   │   └── useEncryption.ts
+│   │   │   ├── App.tsx               # Main app component
+│   │   │   ├── main.tsx              # Entry point
+│   │   │   └── styles.css            # Global styles
+│   │   ├── contracts/                # Smart contracts (Hardhat)
+│   │   ├── scripts/                  # Deployment scripts
+│   │   ├── vite.config.ts
 │   │   └── package.json
 │   │
 │   └── privacy-auditor-hardhat/      # 🔧 Hardhat Contract Example
@@ -248,6 +304,8 @@ function MyComponent() {
 
 ## 🌐 Next.js Integration Example
 
+Our Next.js example showcases the complete SDK integration with a full-featured application structure following best practices.
+
 ### Setup
 
 ```bash
@@ -255,6 +313,15 @@ cd examples/nextjs-compliance-auditor
 npm install
 npm run dev
 ```
+
+### Features Demonstrated
+
+- **API Routes**: RESTful endpoints for FHE operations (encrypt, decrypt, compute)
+- **UI Components**: Reusable Button, Input, and Card components
+- **FHE Components**: Specialized components for encryption, computation, and key management
+- **Custom Hooks**: React hooks for FHE operations (useFHE, useEncryption, useComputation)
+- **Example Use Cases**: Banking and Medical data privacy examples
+- **Type Safety**: Complete TypeScript type definitions
 
 ### Client Component Example
 
@@ -288,6 +355,35 @@ export default function ComplianceDashboard() {
       <h1>Privacy Compliance Auditor</h1>
       {isReady && <ComplianceForm client={client} />}
     </div>
+  );
+}
+```
+
+### Using Custom Hooks
+
+```tsx
+import { useFHE, useEncryption } from '../hooks';
+
+function MyComponent() {
+  const { client, isReady } = useFHE({
+    provider: window.ethereum,
+    network: 'sepolia'
+  });
+
+  const { encrypt, isEncrypting } = useEncryption(client);
+
+  const handleEncrypt = async () => {
+    const result = await encrypt(contractAddress, {
+      values: [42],
+      types: ['uint32']
+    });
+    console.log('Encrypted:', result);
+  };
+
+  return (
+    <button onClick={handleEncrypt} disabled={!isReady || isEncrypting}>
+      Encrypt Data
+    </button>
   );
 }
 ```
@@ -364,14 +460,22 @@ main();
 ### Example Projects
 
 1. **Next.js Compliance Auditor** (`examples/nextjs-compliance-auditor`)
-   - Full-featured Next.js 14+ app
-   - Shows SDK integration
-   - Real-world use case
+   - Full-featured Next.js 14+ app with App Router
+   - Shows SDK integration with API routes
+   - Complete FHE workflow demonstration
+   - Real-world use case with compliance auditing
 
-2. **Privacy Auditor Hardhat** (`examples/privacy-auditor-hardhat`)
-   - Smart contracts with FHE
-   - Deployment scripts
-   - Test suite
+2. **React Privacy Auditor** (`examples/PrivacyComplianceAuditor`)
+   - React 18 + Vite application
+   - SDK integration with React hooks
+   - Privacy-preserving compliance checking
+   - Converted from static HTML to modern React app
+
+3. **Privacy Auditor Hardhat** (`examples/privacy-auditor-hardhat`)
+   - Smart contracts with FHE (Solidity)
+   - Deployment scripts for Sepolia testnet
+   - Comprehensive test suite
+   - Contract integration examples
 
 ---
 
@@ -393,7 +497,7 @@ main();
 
 ```bash
 # Clone repository
-git clone https://github.com/ConsueloBrekke/fhevm-react-template
+git clone https://github.com/your-username/fhevm-react-template
 cd fhevm-react-template
 
 # Install all packages (SDK + Examples)
@@ -404,6 +508,32 @@ npm run build
 
 # Run Next.js example
 npm run dev:nextjs
+```
+
+### Running Individual Examples
+
+**Next.js Compliance Auditor:**
+```bash
+cd examples/nextjs-compliance-auditor
+npm install
+npm run dev
+# Opens at http://localhost:3000
+```
+
+**React Privacy Auditor (Vite):**
+```bash
+cd examples/PrivacyComplianceAuditor
+npm install
+npm run dev
+# Opens at http://localhost:3001
+```
+
+**Hardhat Contracts:**
+```bash
+cd examples/privacy-auditor-hardhat
+npm install
+npm run compile
+npm run test
 ```
 
 ### From Scratch (< 10 Lines)
@@ -654,7 +784,7 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 
 - **Zama Documentation**: https://docs.zama.ai/
 - **fhEVM**: https://docs.zama.ai/fhevm
-- **GitHub**: https://github.com/ConsueloBrekke/fhevm-react-template
+- **GitHub**: https://github.com/your-username/fhevm-react-template
 - **NPM Package**: https://www.npmjs.com/package/@fhevm-sdk/core
 
 ---

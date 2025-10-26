@@ -559,7 +559,7 @@ npm run interact:localhost # Interact on localhost
 - **Etherscan**: https://sepolia.etherscan.io/
 
 ### Community
-- **GitHub Repository**: https://github.com/ConsueloBrekke/PrivacyComplianceAuditor
+- **GitHub Repository**: https://github.com/your-username/fhevm-react-template
 - **Live Demo**: https://privacy-compliance-auditor.vercel.app/
 
 ---

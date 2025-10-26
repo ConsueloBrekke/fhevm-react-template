@@ -1,79 +1,54 @@
 {
-  "name": "root",
-  "version": "0.4.0",
+  "name": "fhevm-react-template",
+  "version": "2.0.0",
+  "description": "Universal FHEVM SDK - Framework-agnostic SDK for building confidential frontends with Zama FHE",
   "private": true,
-  "license": "BSD-3-Clause-Clear",
-  "engines": {
-    "node": ">=20.0.0"
-  },
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
   "scripts": {
-    "chain": "pnpm hardhat:chain",
-    "compile": "pnpm hardhat:compile",
-    "deploy:localhost": "pnpm hardhat:deploy && pnpm generate",
-    "deploy:sepolia": "pnpm hardhat:deploy:sepolia && pnpm generate",
-    "fork": "pnpm hardhat:fork",
-    "format": "pnpm next:format && pnpm hardhat:format",
-    "sdk:build": "pnpm --filter ./packages/fhevm-sdk build",
-    "sdk:watch": "pnpm --filter ./packages/fhevm-sdk watch",
-    "sdk:test": "pnpm --filter ./packages/fhevm-sdk test",
-    "sdk:test:watch": "pnpm --filter ./packages/fhevm-sdk test:watch",
-    "sdk:clean": "pnpm --filter ./packages/fhevm-sdk clean",
-    "generate": "ts-node ./scripts/generateTsAbis.ts",
-    "hardhat:chain": "pnpm --filter ./packages/hardhat chain",
-    "hardhat:check-types": "pnpm --filter ./packages/hardhat check-types",
-    "hardhat:clean": "pnpm --filter ./packages/hardhat clean",
-    "hardhat:compile": "pnpm --filter ./packages/hardhat compile",
-    "hardhat:deploy": "pnpm --filter ./packages/hardhat deploy:localhost",
-    "hardhat:deploy:sepolia": "pnpm --filter ./packages/hardhat deploy:sepolia",
-    "hardhat:format": "pnpm --filter ./packages/hardhat prettier:write",
-    "hardhat:generate": "pnpm --filter ./packages/hardhat typechain",
-    "hardhat:hardhat-verify": "pnpm --filter ./packages/hardhat verify",
-    "hardhat:lint": "pnpm --filter ./packages/hardhat lint",
-    "hardhat:lint-staged": "pnpm --filter ./packages/hardhat lint",
-    "hardhat:test": "pnpm --filter ./packages/hardhat test",
-    "hardhat:verify": "pnpm --filter ./packages/hardhat verify",
-    "hardhat:verify:sepolia": "pnpm --filter ./packages/hardhat verify:sepolia",
-    "lint": "pnpm next:lint && pnpm hardhat:lint",
-    "next:build": "pnpm --filter ./packages/nextjs build",
-    "next:check-types": "pnpm --filter ./packages/nextjs check-types",
-    "next:format": "pnpm --filter ./packages/nextjs format",
-    "next:lint": "pnpm --filter ./packages/nextjs lint",
-    "next:serve": "pnpm --filter ./packages/nextjs serve",
-    "precommit": "lint-staged",
-    "preinstall": "pnpm sdk:build",
-    "start": "pnpm --filter ./packages/nextjs dev",
-    "test": "pnpm hardhat:test",
-    "vercel": "pnpm --filter ./packages/nextjs vercel",
-    "vercel:login": "pnpm --filter ./packages/nextjs vercel:login",
-    "vercel:yolo": "pnpm --filter ./packages/nextjs vercel:yolo",
-    "verify": "pnpm hardhat:verify",
-    "verify:sepolia": "pnpm hardhat:verify:sepolia"
+    "install:all": "npm install && npm run install:sdk && npm run install:examples",
+    "install:sdk": "cd packages/fhevm-sdk && npm install",
+    "install:examples": "npm run install:nextjs && npm run install:hardhat",
+    "install:nextjs": "cd examples/nextjs-compliance-auditor && npm install",
+    "install:hardhat": "cd examples/privacy-auditor-hardhat && npm install",
+    "build": "npm run build:sdk",
+    "build:sdk": "cd packages/fhevm-sdk && npm run build",
+    "dev:nextjs": "cd examples/nextjs-compliance-auditor && npm run dev",
+    "dev:hardhat": "cd examples/privacy-auditor-hardhat && npm run node",
+    "compile:contracts": "cd examples/privacy-auditor-hardhat && npm run compile",
+    "deploy:contracts": "cd examples/privacy-auditor-hardhat && npm run deploy",
+    "test": "npm run test:sdk && npm run test:hardhat",
+    "test:sdk": "cd packages/fhevm-sdk && npm test",
+    "test:hardhat": "cd examples/privacy-auditor-hardhat && npm test",
+    "clean": "rm -rf node_modules packages/*/node_modules examples/*/node_modules",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx}\""
   },
-  "dependencies": {
-    "hardhat-deploy": "^0.11.45"
+  "keywords": [
+    "fhevm",
+    "fhe",
+    "zama",
+    "sdk",
+    "privacy",
+    "encryption",
+    "web3",
+    "blockchain",
+    "confidential",
+    "react",
+    "nextjs",
+    "vue",
+    "framework-agnostic"
+  ],
+  "author": "FHEVM SDK Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zama-ai/fhevm-react-template"
   },
   "devDependencies": {
-    "@types/node": "^22.7.5",
-    "prettier": "^3.6.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "bufferutil",
-      "esbuild",
-      "keccak",
-      "protobufjs",
-      "secp256k1",
-      "sharp",
-      "unrs-resolver",
-      "utf-8-validate",
-      "yarn"
-    ]
+    "prettier": "^3.1.0",
+    "eslint": "^8.50.0"
   }
 }
