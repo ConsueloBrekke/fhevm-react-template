@@ -11,8 +11,6 @@ A **wagmi-like structure** SDK that makes building confidential frontends simple
 
 ## 🌐 Links
 
-**📂 GitHub Repository**: [https://github.com/your-username/fhevm-react-template](https://github.com/your-username/fhevm-react-template)
-
 **🚀 Live Demo**: [https://fhe-compliance-auditor.vercel.app/](https://fhe-compliance-auditor.vercel.app/)
 
 **🎥 Demo Video**: `demo.mp4` - Download the video file to watch the demonstration
